@@ -1,0 +1,6 @@
+[submodule "Tiled/Libraries/format-tiled"]
+	path = Tiled/Libraries/format-tiled
+	url = https://github.com/Yanrishatum/haxe-format-tiled
+[submodule "Tiled/Libraries/Plume"]
+	path = Tiled/Libraries/Plume
+	url = https://github.com/RafaelOliveira/Plume
