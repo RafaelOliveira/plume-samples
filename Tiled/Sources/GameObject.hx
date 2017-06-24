@@ -13,7 +13,7 @@ class GameObject
 	{
 		this.x = x;
 		this.y = y;
-		region = Region.get(regName);
+		region = Region.get(regName);		
 	}
 
 	public function render(g2:Graphics):Void

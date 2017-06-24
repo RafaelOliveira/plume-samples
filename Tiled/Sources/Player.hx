@@ -34,7 +34,7 @@ class Player
 
 		pos = new Vector2(x, y);
 
-		body = new Body(pos, new Rectangle(0, 0, sprite.width, sprite.height));		
+		body = new Body(pos, new Rectangle(0, 0, sprite.width, sprite.height));
 		body.moveCollideY = moveCollideY;
 
 		hw = Std.int(sprite.width / 2);		
@@ -56,7 +56,7 @@ class Player
 		sprite.addAnimation('idle', regions.slice(0, 10));
 		sprite.addAnimation('run', regions.slice(10, 20), 14);		
 
-		sprite.play('idle');
+		sprite.play('idle');		
 	}
 
 	public function update():Void
@@ -66,12 +66,12 @@ class Player
 		if (keyb.isDown(KeyCode.Left))
 		{
 			motion.acceleration.x = -0.7;
-			sprite.flip.x = true;	
+			sprite.flipX = true;	
 		}            
         else if (keyb.isDown(KeyCode.Right))
 		{		
 			motion.acceleration.x = 0.7;
-			sprite.flip.x = false;
+			sprite.flipX = false;
 		}
 
 		if ((keyb.isPressed(KeyCode.Z) || keyb.isPressed(KeyCode.Up)) && onGround)
