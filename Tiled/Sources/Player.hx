@@ -20,13 +20,14 @@ class Player
 	var motion:Motion;
 	var body:Body;
 	var onGround:Bool;
+	var scaled:Bool;
 
 	// half width		
 	var hw:Int;	
 
 	var keyb:Keyboard;
-	var play:Play;	
-
+	var play:Play;
+	
 	public function new(x:Float, y:Float):Void
 	{	
 		var regions = Atlas.createRegionList(Assets.images.player, 92, 136);	
@@ -45,6 +46,7 @@ class Player
 		motion.acceleration.y = 0.3;
 
 		onGround = false;	
+		scaled = false;
 
 		keyb = Keyboard.get();
 		play = Play.getInstance();
@@ -84,6 +86,29 @@ class Player
 			onGround = false;
 			pos.x = 70;
 			pos.y = 120;
+		}
+		else if (keyb.isPressed(KeyCode.S))
+		{
+			if (!scaled)
+			{
+				sprite.width *= 2;
+				sprite.height *= 2;
+				body.rect.width *= 2;
+				body.rect.height *= 2;
+				pos.y -= (sprite.height / 2);
+
+				scaled = true;
+			}
+			else
+			{
+				sprite.width = Std.int(sprite.width / 2);
+				sprite.height = Std.int(sprite.height / 2);
+				body.rect.width = Std.int(body.rect.width / 2);
+				body.rect.height = Std.int(body.rect.height / 2);
+				pos.y += sprite.height;
+
+				scaled = false;
+			}
 		}
 
 		motion.update();
