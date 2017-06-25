@@ -4,4 +4,4 @@ Demos online:
 How to test:
 
 git clone --recursive https://github.com/RafaelOliveira/plume-samples  
-Then open in KodeStudio
+Then open one of the samples in KodeStudio
